@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parallax Scrolling Website</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <a href="#" class="menu">Menu</a>
+      <ul>
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Work</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </header>
+
+    <section>
+      <img src="images/stars.png" id="stars" />
+      <img src="images/moon.png" id="moon" />
+      <img src="images/mountains_behind.png" id="mountains_behind" />
+      <h2 id="text">Moon Light</h2>
+      <a href="#sec" id="btn">Explore</a>
+      <img src="images/mountains_front.png" id="mountains_front" />
+    </section>
+
+    <div class="sec" id="sec">
+      <h2>Parallax Scrolling Effects</h2>
+      <p>
+        The brightest and largest object in our night sky, the Moon makes Earth
+        a more livable planet by moderating our home planet's wobble on its
+        axis, leading to a relatively stable climate. It also causes tides,
+        creating a rhythm that has guided humans for thousands of years. The
+        Moon was likely formed after a Mars-sized body collided with Earth.
+        Earth's Moon is the fifth largest of the 200+ moons orbiting planets in
+        our solar system. Earth's only natural satellite is simply called "the
+        Moon" because people didn't know other moons existed until Galileo
+        Galilei discovered four moons orbiting Jupiter in 1610. NASA currently
+        has three robotic spacecraft exploring the Moon – Lunar Reconnaissance
+        Orbiter and the twin ARTEMIS spacecraft (not to be confused with NASA's
+        new Artemis program to send astronauts back to the Moon).
+        <br /><br />The Moon is Earth's only natural satellite. It goes around
+        the Earth at a distance of about 239,000 miles (385,000 kilometers). The
+        Earth and Moon are tidally locked. Their rotations are so in sync we
+        only see one side of the Moon. Humans didn't see the lunar far side
+        until a Soviet spacecraft flew past in 1959. The Moon has a solid, rocky
+        surface cratered and pitted from impacts by asteroids, meteorites, and
+        comets. The Moon has a very thin and tenuous atmosphere called an
+        exosphere. It is not breathable. More than 105 robotic spacecraft have
+        been launched to explore the Moon. It is the only celestial body beyond
+        Earth – so far – visited by human beings. The Moon was the first place
+        beyond Earth humans tried to reach as the Space Age began in the late
+        1950s. More than 100 robotic explorers from more than half a dozen
+        nations have since sent spacecraft to the Moon. Nine crewed missions
+        have flown to the Moon and back. Artemis logo With Earth Blue, Rocket
+        Red and Lunar Silver for colors, every part of the identity has meaning.
+        Credit: NASA The former Soviet Union logged the first successes with its
+        Luna program, starting with Luna 1 in 1959.
+      </p>
+    </div>
+
+    <script>
+      let stars = document.getElementById("stars");
+      let moon = document.getElementById("moon");
+      let mountains_behind = document.getElementById("mountains_behind");
+      let mountains_front = document.getElementById("mountains_front");
+      let text = document.getElementById("text");
+      let btn = document.getElementById("btn");
+      let header = document.querySelector("header");
+
+      window.addEventListener("scroll", function () {
+        let value = window.scrollY;
+        stars.style.left = value * 0.25 + "px";
+        moon.style.top = value * 1.05 + "px";
+        mountains_behind.style.top = value * 0.5 + "px";
+        mountains_front.style.top = value * 0 + "px";
+        text.style.marginTop = value * 1.5 + "px";
+        btn.style.marginTop = value * 1.5 + "px";
+        btn.style.top = value * 0.5 + "px";
+        header.style.top = value * 0.5 + "px";
+      });
+    </script>
+  </body>
+</html>
